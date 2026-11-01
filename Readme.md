@@ -1,4 +1,4 @@
-# KC7- Valdoria Votes : A Political Mystery (Part 2)
+# KC7- Valdoria Votes : A Political Mystery (Pt 2)
 
 #### About This investigation 
 The Valdoria Board of Elections is gearing up for the most critical election in recent memory. To ensure a smooth voting experience, the board has hired additional poll workers in the past month, preparing them to support operations and assist voters. Officials have made it clear that the voting machines are highly secure, working tirelessly to reassure the public about the integrity of the election process.
@@ -80,9 +80,11 @@ Employees
 Employees
 | where name == "Dora Thomas"
 ```
-**Ans : Polling Station Supervisor*
+**Ans : Polling Station Supervisor**
 
 ![Dora Thomas employee record](images/dora%20thomas.png)
+
+
 
 #### Q 3: What is this supervisor name?
 
@@ -181,7 +183,7 @@ AuthenticationEvents
 
 **Ans : SecurityAlerts**
 
-*The threat actor thought they were being slick, but in the poster, you can see they didn't practice good OPSEC—and their IP was revealed to anyone reading it! 😂*
+*The threat actor thought they were being slick, but in the poster, you can see they didn't practice good OPSEC and their IP was revealed to anyone reading it! 😂*
 
 ![The hacked ballots poster](images/hackedballots.webp)
 
@@ -192,7 +194,7 @@ AuthenticationEvents
 
 ![IP address exposed in the poster](images/hacker%20IP%20that%20was%20tno%20hidden.png)
 
-#### Q 16: What IP address did they forget to hide in the poster?
+#### Q 16: where there any inbound connection using this ip
 
 ```
 InboundNetworkEvents
@@ -234,9 +236,10 @@ PassiveDns
 
 #### Q 20: How many IP addresses did the fraudulent Valdoria government domain resolve to?
 
+```
 PassiveDns
 | where domain == "valdoriavotesgov.com"
-
+```
 **Ans : 3**
 
 ![Malicious domains and their associated IPs](images/mal%20domains%20and%20associated%20ips.png)
@@ -261,7 +264,6 @@ InboundNetworkEvents
 
 ![Requests to the network from the malicious IPs](images/from%20our%20network%20to%20the%20mal%20ip.png)
 
-![Malicious IP communications with the network](images/mal%20ip%20comms%20with%20the%20network.png)
 
 *It looks like the actor started with researching employees at the Elections Board.*
 
@@ -274,17 +276,16 @@ InboundNetworkEvents
 #### Q 24: What group were they specifically interested in?
 
 
-and more 
 **Ans : New hires**
 
 ![Group researched during reconnaissance](images/the%20group%20the%20hacker%20were%20interested%20in%20during%20recon.png)
-
+and more 
 
 *They left a pretty clear clue about their intentions by researching our ability to prevent malicious activity.*
 
 #### Q 25: What specific area of our prevention measures were the threat actors interested in?
 
-**Ans :election interference**
+**Ans : Election interference**
 
 #### Q 26: What important machines were the hackers trying to get into? (two words)?
 
@@ -292,7 +293,7 @@ and more
 
 *The hackers even tried to locate a specific document that would reveal exactly how the machines operate.*
 
-*With this information—like configuration details or default passwords—they could create a more effective plan to hack the machines.*
+*With this information like configuration details or default passwords they could create a more effective plan to hack the machines.*
 
 #### Q 27: Which document were the hackers looking for? (two words)*
 
@@ -409,7 +410,7 @@ OutboundNetworkEvents
 
 #### Q42: What system did Schmelly mention?
 
-**ans : AI system**
+**Ans : AI system**
 
 ![AI system mentioned by Schmelly](images/system%20that%20schmelly%20told%20ansooper.png)
 
@@ -419,7 +420,7 @@ OutboundNetworkEvents
 
 ![Anderson Snooper network activity](images/anderson%20snooper.png)
 
-### Q44: What term appeared at the end of each url that Snooper guessed?
+#### Q44: What term appeared at the end of each url that Snooper guessed?
 
 **Ans : model=gpt-4o**
 
@@ -431,7 +432,7 @@ OutboundNetworkEvents
 
 #### Q46: What status code was returned for Snooper's unsuccessful guesses?
 
-**Ans: 404**
+**Ans : 404**
 
 ![Failed AI system subdomain guesses](images/haccker%20guessing%20the%20domain%20name%20%20of%20the%20ai%20system.png)
 
@@ -439,7 +440,7 @@ OutboundNetworkEvents
 
 #### Q47: What was the nursery rhyme-related subdomain that Snooper guessed?
 
-**Ans :ol-mcdonald-had-a-farm-ai-ai-oh**
+**Ans : ol-mcdonald-had-a-farm-ai-ai-oh**
 
 ![Nursery rhyme-related subdomain guess](images/nusery%20ryhme.png)
 
@@ -457,7 +458,7 @@ OutboundNetworkEvents
 
 #### Q50: How many questions did they ask the chatbot?
 
-**Ans :6**
+**Ans : 6**
 
 ![AI chatbot response about voting machines](images/ai%20response%20on%20votng%20machine.png)
 
